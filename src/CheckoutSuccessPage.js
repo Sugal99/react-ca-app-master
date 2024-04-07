@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
-const CheckoutSuccessPage = () => {
+const CheckoutSuccessPage = ({ clearCart }) => {
+  useEffect(() => {
+    // Clear the cart upon component mount
+    clearCart();
+  }, [clearCart]);
+
   return (
-    <div>
-      <h1>CheckoutSuccessPage</h1>
-      <p>Please feel free to contact us for any inquiries or assistance.</p>
-      {/* Add your contact form or additional content here */}
-    </div>
+    <Container className="mt-5 text-center animate__animated animate__fadeIn">
+      <h1>Order Successful!</h1>
+      <p>Thank you for your purchase.</p>
+      <p>Your order has been successfully processed.</p>
+      <p>Your cart has been cleared.</p>
+      <Link to="/homePage">
+        <Button variant="primary">Back to Store</Button>
+      </Link>
+    </Container>
   );
 };
 

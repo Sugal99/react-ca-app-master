@@ -19,25 +19,22 @@ const Product = ({ product }) => {
         style={{ height: "260px", overflow: "hidden" }}
       >
         <Card.Title>{product.title}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
-        <div className="mt-auto">
-          <Card.Text>
-            {product.discountedPrice !== product.price ? (
-              <div>
-                <p>
-                  Price: <del>${product.price}</del>
-                </p>
-                <p>
-                  Discount: $
-                  {(product.price - product.discountedPrice).toFixed(2)}
-                </p>
-                <p>Discounted Price: ${product.discountedPrice}</p>
-              </div>
-            ) : (
-              <p>Price: ${product.price}</p>
-            )}
-          </Card.Text>
-        </div>
+        <p style={{ height: "185px", overflow: "hidden" }}>
+          {product.description}
+        </p>
+        {product.discountedPrice !== product.price ? (
+          <>
+            <Card.Text>
+              Price: <del>${product.price}</del>
+            </Card.Text>
+            <Card.Text>
+              Discount: ${(product.price - product.discountedPrice).toFixed(2)}
+            </Card.Text>
+            <Card.Text>Discounted Price: ${product.discountedPrice}</Card.Text>
+          </>
+        ) : (
+          <Card.Text>Price: ${product.price}</Card.Text>
+        )}
       </Card.Body>
       <Card.Footer>
         <Link to={`/productPage/${product.id}`}>

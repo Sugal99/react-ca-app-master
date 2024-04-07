@@ -47,42 +47,44 @@ const ProductPage = ({ products, addToCart }) => {
     <Container className="mt-5">
       <Row>
         <Col md={6}>
-          <Image src={product.image.url} alt={product.title} fluid />
+          <Image src={product.image?.url} alt={product.title} fluid />
         </Col>
         <Col md={6}>
           <h2>{product.title}</h2>
-          <p>{product.description}</p>
-
-          {product.discountedPrice !== product.price ? (
-            <div>
-              <p>
-                Price: <del>${product.price}</del>
-              </p>
-              <p>
-                Discount: $
-                {(product.price - product.discountedPrice).toFixed(2)}
-              </p>
-              <p>Discounted Price: ${product.discountedPrice}</p>
-            </div>
-          ) : (
-            <p>Price: ${product.price}</p>
-          )}
+          <div>
+            <p>{product.description}</p>
+            {product.discountedPrice !== product.price ? (
+              <>
+                <p>
+                  <del>Price: ${product.price}</del>
+                </p>
+                <p>Discount: ${product.price - product.discountedPrice}</p>
+                <p>Discounted Price: ${product.discountedPrice}</p>
+              </>
+            ) : (
+              <p>Price: ${product.price}</p>
+            )}
+          </div>
 
           <div>
             <h3>Reviews</h3>
-            {product.reviews.map((review, index) => (
-              <div key={index} className="card mb-3">
-                <div className="card-body">
-                  <h5 className="card-title fw-bold">
-                    Username: {review.username}
-                  </h5>
-                  <h6 className="card-subtitle mb-2 text-muted">
-                    Rating: {review.rating}
-                  </h6>
-                  <p className="card-text">{review.description}</p>
+            {product.reviews && product.reviews.length > 0 ? (
+              product.reviews.map((review, index) => (
+                <div key={index} className="card mb-3">
+                  <div className="card-body">
+                    <h5 className="card-title fw-bold">
+                      Username: {review.username}
+                    </h5>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                      Rating: {review.rating}
+                    </h6>
+                    <p className="card-text">{review.description}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p>No reviews available</p>
+            )}
           </div>
 
           <Button variant="primary" onClick={handleAddToCart}>

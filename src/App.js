@@ -14,6 +14,10 @@ function EComStoreApp() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
+  const clearCart = () => {
+    setCart([]); // Assuming setCart is the function to update the cart state
+  };
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -48,10 +52,10 @@ function EComStoreApp() {
             element={<ProductPage products={products} addToCart={addToCart} />}
           />{" "}
           <Route path="/contactPage" element={<ContactPage />} />
-          <Route path="/checkoutPage" element={<CheckoutPage />} />
+          <Route path="/checkoutPage" element={<CheckoutPage cart={cart} />} />
           <Route
             path="/CheckoutSuccessPage"
-            element={<CheckoutSuccessPage />}
+            element={<CheckoutSuccessPage clearCart={clearCart} />}
           />
         </Routes>
       </Layout>
