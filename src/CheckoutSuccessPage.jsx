@@ -16,7 +16,7 @@ const CheckoutSuccessPage = ({ clearCart }) => {
       <p>Thank you for your purchase.</p>
       <p>Your order has been successfully processed.</p>
       <p>Your cart has been cleared.</p>
-      <Link to="/homePage">
+      <Link to="/">
         <Button variant="primary">Back to Store</Button>
       </Link>
     </Container>
