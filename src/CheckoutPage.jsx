@@ -10,9 +10,9 @@ const CheckoutPage = ({ cart }) => {
   return (
     <Container className="mt-5">
       <h1 className="mb-4">Checkout</h1>
-      {cart.map((product) => (
+      {cart.map((product, index) => (
         <Row
-          key={product.id}
+          key={index} // Using index as the key
           className="mb-4 align-items-center border p-3 rounded"
         >
           <Col xs={12} md={4} lg={3}>
