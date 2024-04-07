@@ -45,7 +45,9 @@ const Header = ({ cart }) => {
           </Nav>
           <SearchBar products={products} />
           {/* Pass addToCart function and cart state to CartIcon */}
-          <CartIcon cart={cart} />
+          <Nav.Link as={Link} to="/checkoutPage">
+            <CartIcon cart={cart} />
+          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

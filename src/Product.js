@@ -21,8 +21,22 @@ const Product = ({ product }) => {
         <Card.Title>{product.title}</Card.Title>
         <Card.Text>{product.description}</Card.Text>
         <div className="mt-auto">
-          <Card.Text>Price: ${product.price}</Card.Text>
-          <Card.Text>Discounted Price: ${product.discountedPrice}</Card.Text>
+          <Card.Text>
+            {product.discountedPrice !== product.price ? (
+              <div>
+                <p>
+                  Price: <del>${product.price}</del>
+                </p>
+                <p>
+                  Discount: $
+                  {(product.price - product.discountedPrice).toFixed(2)}
+                </p>
+                <p>Discounted Price: ${product.discountedPrice}</p>
+              </div>
+            ) : (
+              <p>Price: ${product.price}</p>
+            )}
+          </Card.Text>
         </div>
       </Card.Body>
       <Card.Footer>
