@@ -53,6 +53,23 @@ const ProductPage = ({ products, addToCart }) => {
           <h2>{product.title}</h2>
           <p>{product.description}</p>
           <p>Price: ${product.price}</p>
+          <div>
+            <h3>Reviews</h3>
+            {product.reviews.map((review, index) => (
+              <div key={index} className="card mb-3">
+                <div className="card-body">
+                  <h5 className="card-title fw-bold">
+                    Username: {review.username}
+                  </h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    Rating: {review.rating}
+                  </h6>
+                  <p className="card-text">{review.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <Button variant="primary" onClick={handleAddToCart}>
             Add to Cart
           </Button>
