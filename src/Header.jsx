@@ -28,13 +28,13 @@ const Header = ({ cart }) => {
   return (
     <Navbar bg="primary" collapseOnSelect expand="lg" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand as={Link} to="/homePage">
+        <Navbar.Brand as={Link} to="/">
           eCom
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/homePage">
+            <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
             <Nav.Link as={Link} to="/contactPage">

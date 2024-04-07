@@ -42,7 +42,7 @@ function EComStoreApp() {
     <Router>
       <Layout cart={cart}>
         <Routes>
-          <Route path="/homePage" element={<HomePage products={products} />} />
+          <Route path="/" element={<HomePage products={products} />} />
           <Route
             path="/productPage/:id"
             element={<ProductPage products={products} addToCart={addToCart} />}
