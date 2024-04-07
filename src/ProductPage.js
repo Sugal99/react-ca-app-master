@@ -52,7 +52,22 @@ const ProductPage = ({ products, addToCart }) => {
         <Col md={6}>
           <h2>{product.title}</h2>
           <p>{product.description}</p>
-          <p>Price: ${product.price}</p>
+
+          {product.discountedPrice !== product.price ? (
+            <div>
+              <p>
+                Price: <del>${product.price}</del>
+              </p>
+              <p>
+                Discount: $
+                {(product.price - product.discountedPrice).toFixed(2)}
+              </p>
+              <p>Discounted Price: ${product.discountedPrice}</p>
+            </div>
+          ) : (
+            <p>Price: ${product.price}</p>
+          )}
+
           <div>
             <h3>Reviews</h3>
             {product.reviews.map((review, index) => (
