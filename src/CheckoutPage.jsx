@@ -27,7 +27,6 @@ const CheckoutPage = ({ cart }) => {
             <h3>{product.title}</h3>
             <p>{product.description}</p>
             <p className="text-muted">Price: ${product.price}</p>
-            {/* Add more product details as needed */}
           </Col>
         </Row>
       ))}

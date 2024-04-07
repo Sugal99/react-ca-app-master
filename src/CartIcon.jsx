@@ -3,16 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const CartIcon = ({ cart }) => {
-  console.log("Cart prop in CartIcon component:", cart);
   if (!cart) {
     return null; // Or any fallback content if needed
   }
 
   // Calculate the total number of items in the cart
   const totalItems = cart.length;
-
-  // Log the cart prop
-  console.log("Cart prop in CartIcon component:", cart);
 
   return (
     <div className="shoppingCartIcon mb-3 ms-1">

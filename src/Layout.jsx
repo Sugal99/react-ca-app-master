@@ -1,5 +1,5 @@
-import Header from "./Header"; // Import your Header component
-import Footer from "./Footer"; // Import your Footer component
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children, cart }) => {
   return (

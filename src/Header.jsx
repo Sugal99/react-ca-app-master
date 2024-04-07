@@ -25,12 +25,10 @@ const Header = ({ cart }) => {
     fetchProducts();
   }, []);
 
-  console.log("Cart prop in Header component:", cart); // Log cart prop here
-
   return (
     <Navbar bg="primary" collapseOnSelect expand="lg" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/homePage">
           eCom
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

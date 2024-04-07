@@ -36,11 +36,7 @@ function EComStoreApp() {
 
   const addToCart = (product) => {
     setCart([...cart, product]);
-    console.log("Adding product to cart:", product);
   };
-  console.log("Products:", products); // Add console.log here
-
-  console.log("Cart state in EComStoreApp:", cart); // Log cart state here
 
   return (
     <Router>

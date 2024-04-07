@@ -7,7 +7,8 @@ const CheckoutSuccessPage = ({ clearCart }) => {
   useEffect(() => {
     // Clear the cart upon component mount
     clearCart();
-  }, [clearCart]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Container className="mt-5 text-center animate__animated animate__fadeIn">
