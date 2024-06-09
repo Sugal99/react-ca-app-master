@@ -18,6 +18,8 @@ As mention earlier, This is an eCom website where users can view and add all kin
 
 
 ## Getting Started
+### Installing
+
 1. Clone the repo:
     ```
     git@github.com:Sugal99/react-ca-app-master.git
