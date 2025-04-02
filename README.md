@@ -6,6 +6,8 @@ An eCom website where users can view and add all kinds of items to a cart for ch
 ## Description
 As mention earlier, This is an eCom website where users can view and add all kinds of items to a cart for checkout, either by searching or navigating through them. This is a website made to simulate a "real" e-commerce site where you do everything you would on a real e-com site, from navigating through items, adding them to a cart and later procceding for checkout, the whole proccess is built in on this website.
 
+Netlify: https://comforting-marshmallow-c6020c.netlify.app/
+
 
 
 
